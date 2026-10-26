@@ -4,9 +4,9 @@ A responsive personal curriculum vitae (CV) website that presents my profile, ed
 
 ## Live Demo
 
-**Vercel Link:** https://your-project-name.vercel.app
+**Vercel Link:** https://carlkhian-personal-cv.vercel.app/
 
-**GitHub Repository:** https://github.com/aguirrecarlkhian-oss/personal-cv
+**GitHub Repository:** https://github.com/aguirrecarlkhian-oss/Task-2-Personal-CV-Website-Creation-using-Vercel
 
 ## Student Information
 
