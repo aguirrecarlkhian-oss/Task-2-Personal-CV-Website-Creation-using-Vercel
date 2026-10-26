@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal CV of Carl Khian W. Aguirre">
+<title>Carl Khian W. Aguirre | Personal CV</title>
+
+<style>
+/* ===== VARIABLES ===== */
+:root{--primary:#3867ff;--primary-dark:#244bd4;--secondary:#7667ff;--background:#f5f7fc;--surface:#ffffff;--text:#17213a;--muted:#697386;--border:#e3e8f1;--gradient:linear-gradient(135deg,#3867ff,#7667ff);--shadow:0 20px 50px rgba(35,55,100,0.10);--shadow-hover:0 25px 60px rgba(35,55,100,0.17);--radius:18px;--header-height:78px}
+
+/* ===== DARK MODE ===== */
+body.dark{--background:#0f1523;--surface:#182136;--text:#f3f6ff;--muted:#aab4c8;--border:#2b3750;--shadow:0 20px 50px rgba(0,0,0,0.25);--shadow-hover:0 25px 60px rgba(0,0,0,0.35)}
+
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:"Segoe UI",Arial,sans-serif;background:var(--background);color:var(--text);line-height:1.6;transition:background .3s ease,color .3s ease}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+
+/* ===== HEADER ===== */
+.header{position:fixed;top:0;left:0;width:100%;height:var(--header-height);z-index:1000;padding:0 5%;transition:.3s ease}
+.header.scrolled{background:rgba(255,255,255,0.90);backdrop-filter:blur(15px);box-shadow:0 5px 25px rgba(20,35,60,0.08)}
+body.dark .header.scrolled{background:rgba(15,21,35,0.90)}
+
+/* ===== NAVBAR ===== */
+.navbar{max-width:1200px;height:100%;margin:auto;display:flex;align-items:center}
+
+/* ===== LOGO ===== */
+.logo{display:flex;align-items:center;gap:10px}
+.logo-box{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;color:white;font-size:14px;font-weight:800;background:var(--gradient);box-shadow:0 8px 20px rgba(56,103,255,0.25)}
+.logo-box{position:relative;overflow:hidden}
+.logo-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-text strong{font-size:16px}
+.logo-text small{color:var(--muted);font-size:11px;margin-top:3px}
+
+/* ===== NAV MENU ===== */
+.nav-menu{display:flex;align-items:center;gap:32px;list-style:none;margin-left:auto;margin-right:25px}
+.nav-link{position:relative;color:var(--muted);font-size:15px;font-weight:600;transition:.3s ease}
+.nav-link:hover,.nav-link.active{color:var(--primary)}
+.nav-link::after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;border-radius:5px;background:var(--primary);transition:.3s ease}
+.nav-link.active::after,.nav-link:hover::after{width:100%}
+
+/* ===== THEME / MENU BUTTON ===== */
+.theme-btn,.menu-btn{width:38px;height:38px;border:none;border-radius:10px;background:var(--surface);color:var(--text);cursor:pointer;transition:.3s ease}
+.theme-btn:hover,.menu-btn:hover{color:var(--primary);transform:translateY(-2px)}
+.menu-btn{display:none}
+
+/* ===== GENERAL ===== */
+.section{width:100%}
+
+/* ===== HOME ===== */
+.home{min-height:100vh;padding:130px 7% 70px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 85% 25%,rgba(118,103,255,0.15),transparent 30%),radial-gradient(circle at 5% 85%,rgba(56,103,255,0.10),transparent 25%)}
+.home-container{max-width:1200px;width:100%;margin:auto;display:grid;grid-template-columns:1.05fr 0.95fr;gap:70px;align-items:center}
+
+/* ===== HOME TEXT ===== */
+.small-title{color:var(--primary);font-size:13px;font-weight:800;letter-spacing:2px}
+.home h1{font-size:clamp(50px,6vw,75px);line-height:0.98;letter-spacing:-3px;margin:18px 0}
+.home h1 span{display:block;color:var(--primary)}
+.home h2{color:var(--primary);font-size:21px;margin-bottom:18px}
+.home-text > p{max-width:580px;color:var(--muted);font-size:16px}
+
+/* ===== BUTTONS ===== */
+.buttons{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 19px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:.3s ease}
+.btn:hover{transform:translateY(-3px)}
+.primary-btn{color:white;background:var(--gradient);box-shadow:0 10px 25px rgba(56,103,255,0.25)}
+.secondary-btn{color:var(--text);background:var(--surface);border:1px solid var(--border)}
+.secondary-btn:hover{color:var(--primary);border-color:var(--primary)}
+
+/* ===== QUICK INFO ===== */
+.quick-info{display:flex;flex-wrap:wrap;gap:25px;margin-top:38px}
+.quick-item{display:flex;align-items:center;gap:9px}
+.quick-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:rgba(56,103,255,0.10)}
+.quick-item small{display:block;color:var(--muted);font-size:11px}
+.quick-item strong{display:block;font-size:14px}
+
+/* ===== HOME IMAGE ===== */
+.home-image{position:relative;min-height:500px;display:grid;place-items:center}
+.image-background{position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(56,103,255,0.09)}
+.profile-wrapper{position:relative;width:340px;height:400px;display:grid;place-items:center;background:linear-gradient(145deg,#ffffff,#edf2ff);border-radius:45% 45% 30px 30px;border:8px solid rgba(255,255,255,0.8);box-shadow:0 30px 70px rgba(40,60,120,0.18);transform:rotate(2deg);overflow:hidden}
+body.dark .profile-wrapper{background:linear-gradient(145deg,#202b44,#172035);border-color:#29354e}
+.profile-image{width:260px;height:300px;overflow:hidden;border-radius:45% 45% 20px 20px;background:var(--gradient)}
+.profile-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+
+/* ===== FLOATING CARDS ===== */
+.floating-card{position:absolute;z-index:10;display:flex;align-items:center;gap:10px;padding:12px 15px;border-radius:14px;background:var(--surface);box-shadow:var(--shadow);animation:floating 4s ease-in-out infinite}
+.float-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;color:white;background:var(--gradient)}
+.floating-card strong{display:block;font-size:14px}
+.floating-card small{display:block;color:var(--muted);font-size:11px}
+.card-left{left:0;top:75px}
+.card-right{right:0;bottom:80px;animation-delay:1s}
+@keyframes floating{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ===== SECTION HEADING ===== */
+.section-heading{max-width:650px;margin:0 auto 55px;text-align:center}
+.section-heading > span{color:var(--primary);font-size:12px;font-weight:800;letter-spacing:2px}
+.section-heading h2{font-size:clamp(32px,4vw,48px);line-height:1.15;margin:12px 0}
+.section-heading h2 span{color:var(--primary)}
+.section-heading p{color:var(--muted);font-size:16px}
+
+/* ===== ABOUT ===== */
+.about{padding:110px 7%}
+.about-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px}
+
+/* ===== INFO CARD ===== */
+.info-card{padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);transition:.3s ease}
+.info-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-hover)}
+.card-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:rgba(56,103,255,0.10);margin-bottom:17px;font-size:20px}
+.info-card h3{font-size:19px;margin-bottom:12px}
+.info-card p{color:var(--muted);font-size:15px;margin-bottom:12px}
+
+/* ===== PERSONAL INFO ===== */
+.personal-info{display:flex;flex-direction:column;gap:13px}
+.personal-info div{padding-bottom:9px;border-bottom:1px solid var(--border)}
+.personal-info span{display:block;color:var(--muted);font-size:12px}
+.personal-info strong{display:block;font-size:14px}
+
+/* ===== CHECK LIST ===== */
+.check-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.check-list li{display:flex;gap:9px;color:var(--muted);font-size:15px}
+.check-list span{color:#31ad73;font-weight:bold}
+
+/* ===== SUB HEADING ===== */
+.sub-heading{max-width:1150px;margin:90px auto 30px}
+.sub-heading span{color:var(--primary);font-size:12px;font-weight:800;letter-spacing:2px}
+.sub-heading h3{font-size:30px;margin-top:6px}
+
+/* ===== EDUCATION ===== */
+.education-card{max-width:850px;margin:auto;padding:28px;display:flex;gap:20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);transition:.3s ease}
+.education-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.education-icon{width:52px;height:52px;flex-shrink:0;display:grid;place-items:center;border-radius:14px;background:rgba(56,103,255,0.1);font-size:23px}
+.education-top{display:flex;justify-content:space-between;margin-bottom:8px}
+.education-top span{color:var(--primary);font-size:11px;font-weight:800;letter-spacing:1px}
+.education-top small{color:var(--muted);font-size:12px}
+.education-content h3{font-size:19px;margin-bottom:3px}
+.education-content h4{color:var(--primary);font-size:14px;margin-bottom:8px}
+.education-content p{color:var(--muted);font-size:14px}
+
+/* ===== SKILLS ===== */
+.skills-heading{margin-top:90px}
+.skills-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skills-card{padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.skills-title{display:flex;align-items:center;gap:13px;margin-bottom:25px}
+.skills-title .card-icon{margin:0}
+.skills-title h3{font-size:18px;margin:0}
+.skills-title p{color:var(--muted);font-size:12px}
+
+/* ===== SKILL BAR ===== */
+.skill{margin-bottom:20px}
+.skill:last-child{margin-bottom:0}
+.skill-info{display:flex;justify-content:space-between;margin-bottom:7px}
+.skill-info span{font-size:14px;font-weight:600}
+.skill-info strong{color:var(--primary);font-size:12px}
+.progress{height:7px;overflow:hidden;border-radius:20px;background:var(--border)}
+.progress-bar{width:0;height:100%;border-radius:inherit;background:var(--gradient);transition:width 1.4s ease}
+
+/* ===== SKILL TAGS ===== */
+.skill-tags{max-width:1000px;margin:25px auto 0;display:flex;justify-content:center;flex-wrap:wrap;gap:9px}
+.skill-tags span{padding:7px 13px;border-radius:30px;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:600}
+
+/* ===== CONTACT ===== */
+.contact{padding:100px 7%;color:white;background:var(--gradient)}
+.contact-container{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.contact-text .small-title{color:white}
+.contact-text h2{font-size:clamp(42px,5vw,60px);line-height:1;margin:17px 0}
+.contact-text h2 span{color:#dce3ff}
+.contact-text > p{max-width:480px;color:rgba(255,255,255,0.80);font-size:15px}
+.contact-buttons{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.white-btn{color:var(--primary);background:white}
+.transparent-btn{color:white;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.35)}
+.transparent-btn:hover{background:rgba(255,255,255,0.18)}
+
+/* ===== CONTACT CARD ===== */
+.contact-card{padding:12px;border-radius:20px;background:white;color:var(--text);box-shadow:0 30px 70px rgba(0,0,0,0.18)}
+.contact-item{display:flex;align-items:center;gap:14px;padding:15px;border-radius:12px;transition:.3s ease}
+.contact-item:hover{background:#f1f4ff}
+.contact-icon{width:42px;height:42px;flex-shrink:0;display:grid;place-items:center;border-radius:11px;background:rgba(56,103,255,0.10)}
+.contact-details{flex:1}
+.contact-details small{display:block;color:#8b94a7;font-size:10px;letter-spacing:1px}
+.contact-details strong{display:block;font-size:14px;word-break:break-word}
+.arrow{color:var(--primary);font-size:18px}
+
+/* ===== FOOTER ===== */
+.footer{padding:25px 7%;background:#0d1423;color:white}
+.footer-content{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer strong{font-size:15px}
+.footer p{color:rgba(255,255,255,0.5);font-size:12px}
+.footer a{color:#aebcff;font-size:13px}
+.footer a:hover{color:white}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* ===== NEW SECTIONS: PROJECTS, EXPERIENCE, SOCIAL LINKS ===== */
+.projects,.experience{padding:110px 7%}
+.projects{background:rgba(56,103,255,0.04)}
+.about-grid .objective-card{grid-column:1/-1}
+.proj-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px}
+.proj-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:.3s ease}
+.proj-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-hover)}
+.proj-thumb{position:relative;height:190px;overflow:hidden;display:grid;place-items:center;font-size:46px;background:var(--gradient)}
+.proj-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease}
+.proj-card:hover .proj-thumb img{transform:scale(1.06)}
+.proj-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.proj-body h3{font-size:19px;margin-bottom:8px}
+.proj-body p{color:var(--muted);font-size:14px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.proj-tags span{padding:5px 12px;border-radius:30px;background:rgba(56,103,255,0.10);color:var(--primary);font-size:12px;font-weight:700}
+.proj-links{display:flex;gap:18px;font-size:14px;font-weight:700;margin-top:auto}
+.proj-links a{color:var(--primary)}
+.proj-links a:hover{text-decoration:underline}
+.exp-wrap{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px}
+.exp-box{padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.exp-box h3{font-size:19px;margin-bottom:20px}
+.tl-item{border-left:4px solid var(--primary);padding:2px 0 2px 18px;margin-bottom:20px;transition:padding-left .25s ease}
+.tl-item:last-child{margin-bottom:0}
+.tl-item:hover{padding-left:26px}
+.tl-item strong{display:block;font-size:15px}
+.tl-item small{color:var(--muted);font-size:12px}
+.tl-item p{color:var(--muted);font-size:14px;margin-top:4px}
+.social-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.social-links a{width:46px;height:46px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.35);transition:.3s ease}
+.social-links a:hover{background:rgba(255,255,255,0.22);transform:translateY(-3px)}
+.social-links svg{width:22px;height:22px}
+.social-links .fill{fill:currentColor}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1000px){
+.home-container{grid-template-columns:1fr;text-align:center;gap:40px}
+.home-text > p{margin:auto}
+.buttons,.quick-info{justify-content:center}
+.home-image{min-height:450px}
+.about-grid{grid-template-columns:1fr 1fr}
+.about-grid .info-card:first-child{grid-column:span 2}
+.contact-container{grid-template-columns:1fr}
+.contact-text{text-align:center}
+.contact-text > p{margin:auto}
+.contact-buttons,.social-links{justify-content:center}
+.nav-menu{gap:20px}
+}
+
+@media (max-width:760px){
+.header{padding:0 5%}
+.menu-btn{display:block;margin-left:auto;margin-right:8px}
+.nav-menu{position:absolute;top:70px;left:5%;right:5%;margin:0;padding:12px;display:flex;flex-direction:column;gap:2px;background:var(--surface);border:1px solid var(--border);border-radius:15px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-10px);transition:.3s ease}
+.nav-menu.open{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-link{display:block;width:100%;padding:10px;text-align:center}
+.nav-link::after{display:none}
+.home{padding:120px 5% 70px}
+.about,.projects,.experience{padding:80px 5%}
+.about-grid{grid-template-columns:1fr}
+.about-grid .info-card:first-child{grid-column:auto}
+.skills-grid{grid-template-columns:1fr}
+.footer-content{flex-direction:column;text-align:center}
+}
+
+@media (max-width:520px){
+.logo-text{display:none}
+.theme-btn{display:none}
+.home h1{font-size:45px;letter-spacing:-2px}
+.home h2{font-size:17px}
+.home-text > p{font-size:15px}
+.btn{font-size:13px}
+.quick-item small{font-size:10px}
+.quick-item strong{font-size:13px}
+.section-heading p{font-size:14px}
+.info-card p{font-size:14px}
+.personal-info span{font-size:11px}
+.personal-info strong{font-size:13px}
+.check-list li{font-size:14px}
+.sub-heading h3{font-size:25px}
+.education-content h3{font-size:17px}
+.education-content h4{font-size:13px}
+.education-content p{font-size:14px}
+.skills-title h3{font-size:17px}
+.skill-info span{font-size:13px}
+.skill-tags span{font-size:11px}
+.contact-text > p{font-size:14px}
+.contact-details strong{font-size:13px}
+.footer p{font-size:11px}
+.footer a{font-size:12px}
+.floating-card strong{font-size:12px}
+.floating-card small{font-size:10px}
+.profile-wrapper{width:280px;height:350px}
+.profile-image{width:220px;height:270px}
+.image-background{width:320px;height:320px}
+.floating-card{padding:9px 11px}
+.card-left{left:-5px}
+.card-right{right:-5px}
+.education-card{flex-direction:column}
+}
+
+@media print{.header,.menu-btn,.theme-btn,.social-links{display:none}}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-box">CK<img src="pangit.jpg" alt="Carl Khian" onerror="this.remove()"></span>
+      <span class="logo-text"><strong>Carl Khian</strong><small>Personal CV</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">☾</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ================= HOME ================= -->
+<section class="home section" id="home">
+  <div class="home-container">
+    <div class="home-text reveal">
+      <span class="small-title">HELLO, I'M</span>
+      <h1>Carl Khian <span>W. Aguirre</span></h1>
+      <h2>BS Information Technology Student</h2>
+      <p>I am a motivated 4th year Information Technology student who enjoys learning about web development, programming, and modern technology. I am continuously developing my technical and communication skills while preparing for my future career in the IT field.</p>
+      <div class="buttons">
+        <a href="#about" class="btn primary-btn">Explore My CV <span>→</span></a>
+        <a href="#contact" class="btn secondary-btn">Contact Me <span>✉</span></a>
+      </div>
+      <div class="quick-info">
+        <div class="quick-item"><div class="quick-icon">🎓</div><div><small>Year Level</small><strong>4th Year</strong></div></div>
+        <div class="quick-item"><div class="quick-icon">💻</div><div><small>Program</small><strong>BSIT</strong></div></div>
+        <div class="quick-item"><div class="quick-icon">📚</div><div><small>Section</small><strong>BSIT 4-B</strong></div></div>
+      </div>
+    </div>
+
+    <div class="home-image reveal">
+      <div class="image-background"></div>
+      <div class="profile-wrapper">
+        <div class="profile-image"><img src="pangit.jpg" alt="Carl Khian W. Aguirre"></div>
+      </div>
+      <div class="floating-card card-left">
+        <div class="float-icon">💻</div>
+        <div><strong>Web Development</strong><small>HTML • CSS • JavaScript</small></div>
+      </div>
+      <div class="floating-card card-right">
+        <div class="float-icon">✓</div>
+        <div><strong>BSIT Student</strong><small>4th Year</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about section" id="about">
+  <div class="section-heading reveal">
+    <span>ABOUT ME</span>
+    <h2>Get to know <span>me.</span></h2>
+    <p>A short overview of my background, education, skills, and goals.</p>
+  </div>
+
+  <div class="about-grid">
+    <article class="info-card reveal">
+      <div class="card-icon">👨‍💻</div>
+      <h3>About Me</h3>
+      <p>I am Carl Khian W. Aguirre, a 4th year Bachelor of Science in Information Technology student at Davao del Norte State College.</p>
+      <p>I am interested in web development and programming. I enjoy learning new technologies, improving my skills, and working with others to solve problems.</p>
+    </article>
+
+    <article class="info-card reveal">
+      <div class="card-icon">👤</div>
+      <h3>Personal Information</h3>
+      <div class="personal-info">
+        <div><span>Full Name</span><strong>Carl Khian W. Aguirre</strong></div>
+        <div><span>Location</span><strong>Panabo City, Davao del Norte, Philippines</strong></div>
+        <div><span>Contact Number</span><strong>+63 936 414 1075</strong></div>
+        <div><span>Year Level</span><strong>4th Year</strong></div>
+        <div><span>Section</span><strong>BSIT 4-B</strong></div>
+        <div><span>Subject</span><strong>IT415</strong></div>
+        <div><span>Career Interests</span><strong>Web Development, UI Design</strong></div>
+      </div>
+    </article>
+
+    <article class="info-card reveal">
+      <div class="card-icon">🚀</div>
+      <h3>My Goals</h3>
+      <ul class="check-list">
+        <li><span>✓</span> Improve my programming skills</li>
+        <li><span>✓</span> Learn modern web technologies</li>
+        <li><span>✓</span> Build useful web applications</li>
+        <li><span>✓</span> Become a skilled IT professional</li>
+      </ul>
+    </article>
+
+    <article class="info-card objective-card reveal">
+      <div class="card-icon">🎯</div>
+      <h3>Career Objective</h3>
+      <p>To start my career as a web developer through an internship or entry-level role, where I can apply what I have learned, build real projects, and grow with a professional team.</p>
+    </article>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="sub-heading reveal">
+    <span>EDUCATION</span>
+    <h3>My academic background</h3>
+  </div>
+
+  <div class="education-card reveal">
+    <div class="education-icon">🎓</div>
+    <div class="education-content">
+      <div class="education-top"><span>CURRENT</span><small>4th Year</small></div>
+      <h3>Bachelor of Science in Information Technology</h3>
+      <h4>Davao del Norte State College</h4>
+      <p>Currently studying Information Technology as a 4th year student under section BSIT 4-B. Dean's Lister, 3rd Year 1st Semester (AY 2025–2026).</p>
+    </div>
+  </div>
+
+  <div class="education-card reveal">
+    <div class="education-icon">🏫</div>
+    <div class="education-content">
+      <div class="education-top"><span>COMPLETED</span><small>2022 – 2023</small></div>
+      <h3>Senior High School</h3>
+      <h4>Panabo City National High School</h4>
+      <p>Technical-Vocational-Livelihood (TVL) track, Information and Communications Technology (ICT) strand.</p>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="sub-heading skills-heading reveal">
+    <span>SKILLS</span>
+    <h3>My technical &amp; personal skills</h3>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skills-card reveal">
+      <div class="skills-title">
+        <div class="card-icon">💻</div>
+        <div><h3>Technical Skills</h3><p>Web development</p></div>
+      </div>
+      <div class="skill"><div class="skill-info"><span>HTML</span><strong>90%</strong></div><div class="progress"><div class="progress-bar" data-width="90%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>CSS</span><strong>80%</strong></div><div class="progress"><div class="progress-bar" data-width="80%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>JavaScript</span><strong>70%</strong></div><div class="progress"><div class="progress-bar" data-width="70%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>Git &amp; GitHub</span><strong>70%</strong></div><div class="progress"><div class="progress-bar" data-width="70%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>Database Management</span><strong>60%</strong></div><div class="progress"><div class="progress-bar" data-width="60%"></div></div></div>
+    </div>
+
+    <div class="skills-card reveal">
+      <div class="skills-title">
+        <div class="card-icon">🧠</div>
+        <div><h3>Personal Skills</h3><p>Professional development</p></div>
+      </div>
+      <div class="skill"><div class="skill-info"><span>Communication</span><strong>85%</strong></div><div class="progress"><div class="progress-bar" data-width="85%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>Problem Solving</span><strong>80%</strong></div><div class="progress"><div class="progress-bar" data-width="80%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>Teamwork</span><strong>85%</strong></div><div class="progress"><div class="progress-bar" data-width="85%"></div></div></div>
+    </div>
+  </div>
+
+  <div class="skill-tags reveal">
+    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>GitHub</span>
+    <span>Web Development</span><span>Communication</span><span>Problem Solving</span>
+  </div>
+</section>
+
+<!-- ================= PROJECTS (NEW) ================= -->
+<section class="projects section" id="projects">
+  <div class="section-heading reveal">
+    <span>PROJECTS</span>
+    <h2>Things I have <span>built.</span></h2>
+    <p>Some of my completed and ongoing projects.</p>
+  </div>
+
+  <div class="proj-grid">
+    <article class="proj-card reveal">
+      <div class="proj-thumb">🌐<img src="cv.jpg" alt="Screenshot of my Personal CV website" onerror="this.remove()"></div>
+      <div class="proj-body">
+        <h3>Personal CV Website</h3>
+        <p>This website. It shows my profile, skills, and projects, and is deployed on Vercel.</p>
+        <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/aguirrecarlkhian-oss/personal-cv" target="_blank" rel="noopener">GitHub</a>
+          <!-- EDIT: after deploying on Vercel, put your real link below -->
+          <a href="https://your-project.vercel.app" target="_blank" rel="noopener">Live Demo</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card reveal">
+      <div class="proj-thumb"><img src="fabric.jpg" alt="Screenshot of FabricCare AI" onerror="this.remove()"></div>
+      <div class="proj-body">
+        <h3>FabricCare AI (Capstone, Ongoing)</h3>
+        <p>A mobile app that identifies fabric type from a photo, assesses fabric health and estimates garment lifespan, then recommends how to wash, dry and iron it. I am the documentation lead of our 3-member team and write the study's chapters and research papers.</p>
+        <div class="proj-tags"><span>Mobile App</span><span>Image Processing</span><span>CNN</span><span>SVM</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/markkennethkenet/fabricare1" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card reveal">
+      <div class="proj-thumb"><img src="coffe.png" alt="Screenshot of KainLab" onerror="this.remove()"></div>
+      <div class="proj-body">
+        <h3>KainLab (Torres Group)</h3>
+        <p>A touchscreen-oriented ordering and payment system where users pick products, adjust quantities, review the order summary, pay by cash, QR or card (simulated), and view a receipt. I built the products and filter feature in a group of three.</p>
+        <div class="proj-tags"><span>Touchscreen UI</span><span>Cart</span><span>Payments</span><span>Receipt</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/markkennethkenet/kainlab-torresgroup" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE AND ACHIEVEMENTS (NEW) ================= -->
+<section class="experience section" id="experience">
+  <div class="section-heading reveal">
+    <span>EXPERIENCE</span>
+    <h2>Experience &amp; <span>achievements.</span></h2>
+    <p>Hands-on work, activities, and recognitions.</p>
+  </div>
+
+  <div class="exp-wrap">
+    <div class="exp-box reveal">
+      <h3>🛠 Experience</h3>
+      <div class="tl-item"><strong>Capstone Documentation Lead</strong><small>2025 – Present</small><p>FabricCare AI: I write the study's chapters and research papers as part of a 3-member team.</p></div>
+    </div>
+
+    <div class="exp-box reveal">
+      <h3>🏆 Achievements &amp; Certifications</h3>
+      <div class="tl-item"><strong>Dean's Lister</strong><small>Davao del Norte State College · 3rd Year, 1st Semester (AY 2025–2026)</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact section" id="contact">
+  <div class="contact-container">
+    <div class="contact-text reveal">
+      <span class="small-title">CONTACT</span>
+      <h2>Let's <span>connect.</span></h2>
+      <p>Feel free to reach out to me through my school email. I would be happy to connect and communicate with you.</p>
+      <div class="contact-buttons">
+        <a href="mailto:aguirre.carlkhian@dnsc.edu.ph" class="btn white-btn">Send Me an Email <span>→</span></a>
+        <button onclick="printCV()" class="btn transparent-btn">Print / Save CV <span>↓</span></button>
+      </div>
+      <!-- NEW: GitHub, LinkedIn and social media -->
+      <div class="social-links">
+        <a href="https://github.com/aguirrecarlkhian-oss" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DkSu41fYY/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+        </a>
+        <a href="mailto:aguirre.carlkhian@dnsc.edu.ph" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-card reveal">
+      <a href="mailto:aguirre.carlkhian@dnsc.edu.ph" class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div class="contact-details"><small>EMAIL</small><strong>aguirre.carlkhian@dnsc.edu.ph</strong></div>
+        <span class="arrow">→</span>
+      </a>
+      <div class="contact-item">
+        <div class="contact-icon">🎓</div>
+        <div class="contact-details"><small>SCHOOL</small><strong>Davao del Norte State College</strong></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💻</div>
+        <div class="contact-details"><small>PROGRAM</small><strong>BS Information Technology</strong></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📚</div>
+        <div class="contact-details"><small>SECTION</small><strong>BSIT 4-B • IT415</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-content">
+    <div><strong>Carl Khian W. Aguirre</strong><p>BSIT 4-B • IT415</p></div>
+    <p>© 2026 Carl Khian W. Aguirre</p>
+    <a href="#home">↑ Back to top</a>
+  </div>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+/* ===== MOBILE MENU ===== */
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll(".nav-link");
+
+menuBtn.addEventListener("click", function () {
+    navMenu.classList.toggle("open");
+    menuBtn.textContent = navMenu.classList.contains("open") ? "✕" : "☰";
+});
+
+/* Close menu after clicking navigation */
+navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        navMenu.classList.remove("open");
+        menuBtn.textContent = "☰";
+    });
+});
+
+/* ===== ACTIVE NAVIGATION ===== */
+const sections = document.querySelectorAll("section[id]");
+
+function updateActiveLink() {
+    const scrollPosition = window.scrollY + 180;
+    sections.forEach(function (section) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(function (link) {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + sectionId) {
+                    link.classList.add("active");
+                }
+            });
+        }
+    });
+}
+window.addEventListener("scroll", updateActiveLink);
+
+/* ===== HEADER ===== */
+const header = document.getElementById("header");
+
+function updateHeader() {
+    if (window.scrollY > 40) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+}
+window.addEventListener("scroll", updateHeader);
+
+/* ===== REVEAL ANIMATION ===== */
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+revealElements.forEach(function (element) {
+    revealObserver.observe(element);
+});
+
+/* ===== SKILL BARS ===== */
+const progressBars = document.querySelectorAll(".progress-bar");
+
+const skillObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            const bar = entry.target;
+            bar.style.width = bar.getAttribute("data-width");
+            skillObserver.unobserve(bar);
+        }
+    });
+}, { threshold: 0.5 });
+
+progressBars.forEach(function (bar) {
+    skillObserver.observe(bar);
+});
+
+/* ===== DARK MODE ===== */
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark");
+    if (document.body.classList.contains("dark")) {
+        themeBtn.textContent = "☀";
+        localStorage.setItem("theme", "dark");
+    } else {
+        themeBtn.textContent = "☾";
+        localStorage.setItem("theme", "light");
+    }
+});
+
+/* ===== LOAD SAVED THEME ===== */
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    themeBtn.textContent = "☀";
+}
+
+/* ===== PRINT CV ===== */
+function printCV() {
+    window.print();
+}
+
+/* ===== INITIALIZE ===== */
+updateHeader();
+updateActiveLink();
+</script>
+
+</body>
+</html>
